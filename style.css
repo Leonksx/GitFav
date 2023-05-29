@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #131318;
+  --secondary-color: #e1e1e6;
+  --tertiary-color: #065e7c;
+  --quaternary-color: #4a808c;
+  --quinary-color: #092d38;
+
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Roboto Mono", monospace;
+
+  --primary-font-size: 1.6rem;
+  --secondary-font-size: 1.4rem;
+
+  --primary-font-weight: 400;
+  --secondary-font-weight: 700;
+
+  font-size: 62.5%;
+  line-height: 160%;
+}
+
+.sr-only {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: #000000;
+  color: #e1e1e6;
+  font-size: 1.6rem;
+}
+
+main {
+  border: 2px solid var(--quaternary-color);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#app {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+
+header {
+  padding: 7rem 0 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img {
+  max-width: 18.6rem;
+  max-height: 3.2rem;
+}
+
+/* Search */
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.search input {
+  width: 462px;
+  height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--secondary-color);
+  background-color: #06181c;
+}
+
+::placeholder {
+  color: #7c7c8a;
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 17rem;
+  height: 4.8rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  font-weight: var(--secondary-font-weight);
+  font-size: var(--secondary-font-size);
+  text-transform: uppercase;
+  transition: 290ms;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+}
+
+.search button:hover svg path {
+  fill: var(--tertiary-color);
+}
+
+.search button:active {
+  background-color: var(--quinary-color);
+}
+
+/* Table */
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  height: 56rem;
+  font-size: 4rem;
+  font-family: var(--secondary-font);
+  color: #4e5455;
+  background-color: #030b0d;
+}
+
+.empty-state svg {
+  width: 200rem;
+  height: 20rem;
+}
+
+table * {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+  border: 1px solid var(--quaternary-color);
+  border-collapse: collapse;
+  border-radius: 1.2rem 1.2rem 0 0;
+  overflow: hidden;
+  background: var(--quinary-color);
+}
+
+tbody {
+  display: block;
+  max-height: 48rem;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+thead,
+tbody tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+table tr:nth-child(odd) {
+  background: #030b0d;
+}
+table tr:nth-child(even) {
+  background: #06181c;
+}
+table tr:nth-child(odd):hover {
+  background: #040f11;
+}
+table tr:nth-child(even):hover {
+  background: #030b0dc0;
+}
+
+table th {
+  background: var(--quinary-color);
+  padding: 1.6rem;
+  text-align: left;
+}
+
+table th:nth-child(1) {
+  padding-left: 2.2rem;
+}
+
+table td {
+  padding: 1.6rem;
+  text-align: left;
+}
+
+tr + tr {
+  border: 1px solid var(--quaternary-color);
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  
+}
+
+td.user a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+td.user span {
+  font-weight: 400;
+}
+
+td.repositories,
+td.followers,
+td.action {
+  text-align: center;
+}
+
+tr th:nth-child(2),
+tr th:nth-child(3) {
+  text-align: center;
+}
+
+td.user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+/* Action Remove */
+
+td .btn-remove {
+  background: none;
+  color: #f75a68;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+td .btn-remove:hover {
+  color: #eb4351;
+}
+
+td .btn-remove:active {
+  color: #a50f1f;
+}
+
+/* Scrollbar */
+
+table tbody::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+table tbody::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 12rem;
+}
+
+table tbody::-webkit-scrollbar-thumb {
+  background: #4A808C;
+  border-radius: 1rem;
+}
+
